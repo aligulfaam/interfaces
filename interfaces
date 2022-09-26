@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace CSharp_InterFaces
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            fish fish = new fish();
+            bird bird = new bird();
+            bear bear = new bear();
+
+            fish.breathe();
+            bird.breathe();
+            bear.breathe();
+
+            Console.ReadLine();
+        }
+        class fish : Ianimal 
+        {
+            public void breathe()
+            {
+                Console.WriteLine("The fish is swimming ");
+            }
+        }
+        class bird : Ianimal
+        {
+            public void breathe()
+            {
+                Console.WriteLine("The bird is flying");
+            }
+        }
+        class bear : Ianimal
+        {
+            public void breathe()
+            {
+                Console.WriteLine("The bear is running");
+            }
+        }
+        interface Ianimal
+        {
+            void breathe();
+        }
+
+
+
+    }
+}
